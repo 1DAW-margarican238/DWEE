@@ -1,3 +1,0 @@
-falta el 13 por hacerlo recursiva
-el 15
-y los demas a partir del 

@@ -1,6 +1,6 @@
 "use strict"
 {
-let n = parseFloat(prompt("Introduce un número:"));
+let n = parseFloat(prompt("Introduce a number:"));
 let op = prompt("Introduce 'F' o 'C': ");
 function miFuncion(n,op){
    if (op === 'F' || op === 'f'){
@@ -8,7 +8,7 @@ function miFuncion(n,op){
    }else if (op === 'C' || op === 'c'){
      return ((n*9/5)+32) + 'F';
    }else{
-    return "No válido"
+    return "Not valid"
    }
 
 }

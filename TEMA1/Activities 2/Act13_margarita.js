@@ -4,7 +4,10 @@
     function miFuncion(n){
         let acum =1;
         for(let i  = n ; i>0;i--){
-            acum *=i;
+            a
+            
+            
+            cum *=i;
         }
         return acum;
     }
@@ -12,14 +15,14 @@
     console.log(miFuncion(5));
 
     // recursive function
-    // function miFuncion2(n){
-    //     if(n === 0){
-    //         return n;
-    //     }else{
-    //         return miFuncion2 *=n;
-    //     }
-    // }
+    function miFuncion2(n){
+        if(n === 1){
+            return n;
+        }else{
+            return  n *= miFuncion2(n-1);
+        }
+    }
 
-    // console.log(miFuncion2(5));
+    console.log(miFuncion2(5));
 
 }
