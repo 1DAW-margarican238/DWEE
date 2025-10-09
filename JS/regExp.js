@@ -9,6 +9,7 @@ u — Unicode: soporte completo para caracteres Unicode (emojis, símbolos)
 y — Sticky: busca exactamente desde la posición actual (sin saltos)
 */
 
+// $ al final para que termine por ese caracter
 
 
 const r1 =/.a.o/gimuy;
@@ -248,6 +249,36 @@ regExp26 = /^[0-9]{2,4}$/;
 console.log(regExp26.test(22576)); // falso pq son mas de 4 numeros
 
 // IMPORTANTE -> PONER SIEMPRE ^  Y  $
+
+let regExp27 =/7+A/;
+console.log(regExp27.test("78364738A"));
+
+/**
+ * (x)
+ * (?:x)
+ * (?=y)
+ * x(?!y)
+ */
+
+
+let str = "la ola de la playa tiene más sal que de costumbre";
+let regExp28 = /\b[áéíóúa-z]{3}\b/gi;
+// console.log(regExp28.test(str));
+console.log(regExp28.exec(str));
+console.log(regExp28.lastIndex);
+console.log(regExp28.exec(str));
+console.log(regExp28.lastIndex);
+console.log(regExp28.exec(str));
+
+
+
+// array con todas las palabras que encuentra q cumple la expresión
+console.log(str.match(regExp28));
+
+
+
+
+
 
 
 }
