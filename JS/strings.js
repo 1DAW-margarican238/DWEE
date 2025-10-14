@@ -27,7 +27,7 @@
     //decir desde que posicion buscar // si hay dos carcteres iguales da solo el primero que encuentra
     console.log(myString.indexOf("¿", 10)); //-1 es no encontrar nada //14
 
-    //l aultima ocurrencia del caracter que estamos buscando
+    //la ultima ocurrencia del caracter que estamos buscando
     console.log(myString.lastIndexOf("¿")); //14
 
     // 2º parametro => posicion desde la izq desde donde se empieza a buscar hacia atrás
