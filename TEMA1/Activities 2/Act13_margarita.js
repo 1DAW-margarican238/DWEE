@@ -4,10 +4,7 @@
     function miFuncion(n){
         let acum =1;
         for(let i  = n ; i>0;i--){
-            a
-            
-            
-            cum *=i;
+            acum *=i;
         }
         return acum;
     }
