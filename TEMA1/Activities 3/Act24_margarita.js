@@ -1,13 +1,9 @@
 "use strict"
 {
-//. Programa una función que elimine cierto patrón de caracteres de un texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá "1, 2, 3, 4 y 5
+    function myFunction(cad, patron){
+        let regExp = new RegExp(patron, "g");
+        return cad.replace(regExp,"");
+    };
 
-//!!NO ESTA TERMINADO
-let regExp = /[a-zA-Z]/;
-if(regExp.test(cad) = false){
-
-}
-
-
-
-}
+    console.log(myFunction("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz"));
+};
