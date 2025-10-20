@@ -146,4 +146,83 @@ console.log(myNumbers);
 
 
 
+// slice (inicio, [final]); -> desde inicio hasta final -1
+console.log("\n\tSlice");
+let nombres = ["Rita","Manuel","Miguel","Ana","Vanesa"];
+let nombresMasculinos = nombres.slice(1,3); //de la posicion 1 a 3 (-1 que es el 2) 
+console.log(nombresMasculinos);
+console.log(nombres.slice(-2)); // las n últimas posiciones
+
+
+
+//filter:  crea un nuevo array con los elementos filtrados
+console.log("\n\tFilter");
+let users = [
+    {name: "John", age: 34},
+    {name: "Amy", age: 20},
+    {name: "Amador", age: 25},
+    {name: "Thomas", age: 10}
+];
+let filteredUsers =  users.filter(function (user){
+    return user.age > 15;
+}); // devuelve solo si es verdadero
+console.log(filteredUsers);
+
+// con funcion flecha
+let filteredUsers2 = users.filter ((user) => user.age>15);
+console.log(filteredUsers2);
+
+//find:  devuelve el primer elemento del array que cumpla la condición
+console.log("\n\tFind");
+let user = users.find (function(user){
+    return user.name.match(/A[a-z]*/);
+}); //solo devuelve el primero q empieza por A (aunque esté la g de global y haya mas de uno que cumpla la condición)
+console.log(user);
+
+let user2 = users.find((user)=>user.name.match(/A[a-z]*/) );
+console.log(user2);
+
+
+
+//some:  devuelve true/false . Comprueba si al menos un elemento cumple la condición (no dice cuantos, solo si si o si no)
+console.log("\n\tSome");
+let hasUser = users.some(function(user){
+ return user.age == 10;
+});
+hasUser?console.log("PO ZI"):console.log("PO NO");
+
+let hasUser2 = users.some((user)=> user.age == 11);
+hasUser2?console.log("PO ZI"):console.log("PO NO");
+
+
+//findIndex:  devuelve el índice del primer elemento del array que cumpla la condición
+console.log("\n\tFindIndex");
+let index = users.findIndex(function(user){
+    return user.age==25;
+});
+console.log(index); // si no lo encuentra da -1
+
+let index2 = users.findIndex((user) => user.age ==25);
+console.log(index2);
+
+//concat -> concatena arrays // copia por valor, no por referencia
+console.log("\n\tConcat");
+let array1 = ["a","b","c"];
+let array2 = ["d","e","f"];
+let array3 = array1.concat(array2);
+console.log(array3);
+
+array1[2] = "X";
+console.log(array3); 
+let array4 = [...array1,...array2]; // es lo mismo que concat
+console.log(array4);
+array2[2] = "Z";
+console.log(array4);
+
+
+
+
+//reduce:  
+console.log("\n\tReduce");
+
 }
