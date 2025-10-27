@@ -8,7 +8,7 @@ for (let i = 1; i < myVector.length; i++) {
     if (myVector[i].length < shortest.length) {
         shortest = myVector[i];
     }
-}
+    }
 console.log(shortest);
 
 console.log("b. La cadena más larga");
