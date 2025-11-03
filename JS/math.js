@@ -60,6 +60,4 @@ console.log(Math.round(Math.random()*(600-501)+501));
 
 
 
-
-
 }
