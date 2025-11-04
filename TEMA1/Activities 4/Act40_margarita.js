@@ -8,7 +8,7 @@ function myFunction(fechaNac){
 
     let partesF = fechaNac.split("/");
     let dia = partesF[0];
-    let mes = partesF[1];
+    let mes = partesF[1] -1;
     let anyo = partesF[2];
 
     let fechaNac2 = new Date(anyo, mes, dia);
@@ -21,6 +21,9 @@ function myFunction(fechaNac){
 
 console.log(myFunction("25/10/2006"))
 
-//error
+
+
+//falta por terminar, comprobar mes y dia
+
 
 }

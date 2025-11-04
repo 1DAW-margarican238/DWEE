@@ -22,4 +22,6 @@ function myFunction(dayB, monthB,yearB){
 
 console.log("Age: " + myFunction(20, 12, 2000))
 
+//hacer con Date !!!!!
+
 }

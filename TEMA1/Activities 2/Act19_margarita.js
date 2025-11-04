@@ -3,11 +3,12 @@
     
     
     function myFunction(myString, char){
-        let myArray = myString.split(" ");
-        console.table(myArray)
+        let myArray = myString.split(char);
+        return myArray;
     }
 
 
-    myFunction("hola que tal"," ")
+    let a = myFunction("hola que tal"," ");
+    console.log(a);
 
 }

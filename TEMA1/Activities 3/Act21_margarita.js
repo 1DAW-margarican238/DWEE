@@ -6,8 +6,9 @@
 function myFunction(cad){
       return cad.split('').reverse().join('');
 }
-console.log(myFunction("Hola mundo"));
 
+let a = (myFunction("Hola mundo"));
+console.log(a);
 
 
 
