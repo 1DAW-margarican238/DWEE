@@ -4,16 +4,22 @@
 // este formato dd/mm/aaa.
 
 
-// function myFunction(edad){
-// let edadP = edad;
-// let hoy  = new Date();
-// let esteAnyo = hoy.getFullYear();
-// let suAnyo = edad.getFullYear();
+function myFunction(fechaNac){
 
-// return esteAnyo ;
-// };
+    let partesF = fechaNac.split("/");
+    let dia = partesF[0];
+    let mes = partesF[1];
+    let anyo = partesF[2];
 
-// console.log(myFunction("25/10/2006"))
+    let fechaNac2 = new Date(anyo, mes, dia);
+
+    let hoy = new Date();
+    let edad = hoy.getFullYear() - fechaNac2.getFullYear();
+    return edad;
+
+};
+
+console.log(myFunction("25/10/2006"))
 
 //error
 
