@@ -63,13 +63,50 @@
             }
     });
 
-        
     //listener a cada check
     for (let c of myChecks) {
         c.addEventListener("change", (ev)=>{
-            
+            if(c.checked){
+                console.log("Me como un " + c.value);
+            }else{
+                console.log("No me como un " + c.value)
+            }
         })
     }
+
+    //select
+    let seleccion = document.querySelector("#idLenguaje");
+    console.log(seleccion);
+    for (let o of seleccion) {
+        console.log(o.value);
+        console.log(o.textContent);
+        console.log(seleccion.selectedIndex);
+    }
+    console.log("indice seleccionado -> " + seleccion.options[seleccion.selectedIndex].value);
+
+    seleccion.addEventListener("change",(ev)=>{ 
+        console.log(`\nEl índice seleccionado es: ${seleccion.selectedIndex}`);
+        console.log(`El valor del elemento seleccionado es: ${seleccion.options[seleccion.selectedIndex].value}`);
+        console.log(`El texto del elemento seleccionado es: ${seleccion.options[seleccion.selectedIndex].text}`);
+    }); //cada vez q cambia la selección
+
+
+    //selector datalist
+    let datalist =  document.querySelector("#idFrutas");
+    //convertirlo a array pq no es iterable
+    for (let o  of Array.from(datalist.options)) {
+        console.log(o.value);
+        console.log(o.text);
+        console.log(o.textContent);        
+    };
+    //coger la caja de texto
+    let textbox = document.querySelector("#idFrutas1");
+    textbox.addEventListener("change",(ev)=>{
+    console.log(textbox.value); 
+        console.log(ev.target);
+        console.log(ev.target.value);
+    });
+
 
     
 
