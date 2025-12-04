@@ -11,9 +11,9 @@ function myFunction(array){
     desc: []
   };
 
-completo.asc = [...myArray].sort((a,b)=> a-b);
-completo.desc = [...myArray].sort((a,b)=> b-a);
-return completo;
+  completo.asc = [...array].sort((a,b)=> a-b);
+  completo.desc = [...array].sort((a,b)=> b-a);
+  return completo;
 }
 
 let myArray = [7,5,7,8,6];

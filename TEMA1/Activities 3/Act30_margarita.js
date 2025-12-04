@@ -1,27 +1,29 @@
 "use strict"
 {
     //. Programa una función para saber la edad de una persona, sabiendo la fecha de nacimiento.
+ 
+    function getEdad (fecha) {
+        let anyo = fecha.getFullYear();
+        let mes = fecha.getMonth();
+        let dia = fecha.getDate();
 
-function myFunction(dayB, monthB,yearB){
-    let thisDay = 16;
-    let thisMonth = 10;
-    let thisYear = 2025;
+        let fechaActual = new Date();
+        let anyoActual = fechaActual.getFullYear();
+        let mesActual = fechaActual.getMonth();
+        let diaActual = fechaActual.getDate();
 
-    let age = thisYear - yearB;
+        let edad = anyoActual - anyo - 1;
+        if (mes === mesActual){           
+            if (dia < diaActual){        
+                edad++;
+            }
+        }else if (mes < mesActual){
+            edad++;
+        }
 
-    if (thisMonth < monthB){
-        age = age - 1;
+        return edad;
     }
 
-    if (thisMonth == monthB && thisDay < dayB){
-        age = age - 1;
-    }
-
-    return age;
-}
-
-console.log("Age: " + myFunction(20, 12, 2000))
-
-//hacer con Date !!!!!
+    console.log(getEdad(new Date("25/04/2006")));
 
 }
