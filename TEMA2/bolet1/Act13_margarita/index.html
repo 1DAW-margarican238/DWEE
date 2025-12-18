@@ -1,16 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JAVA SCRIPT DOM</title>
+    <title>Formulario Selects</title>
 </head>
 <body>
-    <h3>Formulario:</h3>
-    <form id="form1" name="form1" method="post" action="https://formsubmit.co/mcandur2504@g.educaand.es">
-        <input type="text" id="dni" name="dni" placeholder="introduzca su DNI">
-        <button type="submit" form="form1" value="Submit">Submit</button>
-       </form>
+
+    <form id="miFormulario" name="form1" method="post" action="https://formsubmit.co/mcandur2504@g.educaand.es">
+        <label for="provincia">Provincia:</label><br>
+        <select id="provincia">
+            <option value="">Select sin seleccionar</option>
+            <option value="alicante">Alicante</option>
+            <option value="castellon">Castellón</option>
+            <option value="valencia">Valencia</option>
+        </select>
+        <br><br>
+        <label for="ciudad">Ciudad:</label><br>
+        <select id="ciudad">
+            <option value="">Select sin seleccionar</option>
+        </select>
+        <br><br>
+        <button type="submit">Enviar</button>
+    </form>
+
     <script src="Act13_margarita.js"></script>
 </body>
-</html> 
+</html>

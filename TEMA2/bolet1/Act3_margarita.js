@@ -37,6 +37,7 @@
         let checkbox = document.createElement("input");
         checkbox.type = "checkbox";
         let random = getRandomNumber()
+        
         checkbox.value = random;
         checkbox.id = i;
         let label = document.createElement("label");
