@@ -16,35 +16,41 @@
      * NOTA2: probar el funcionamiento recargando la página tras haber introducido un username y tras borrarlo tanto con el botón como desde el navegador.
      *
     */  
+
+    let myH2 = document.createElement("h2");
+
+    let button = document.createElement("button");
+        button.textContent ="Elimina el usuario";
+        document.body.appendChild(button);
+
+    button.addEventListener("click",(ev)=>{
+        localStorage.removeItem("username");
+        obtenerUsuario();
+    })
+
+
     function obtenerUsuario(){
         let username = localStorage.getItem("username");
-        let myH2 = document.createElement("h2");
 
         if(!username){
             myH2.textContent ="Usuario no identificado";
-            document.body.appendChild(myh2);
+            document.body.appendChild(myH2);
             username = prompt("Introduzca su nombre de usuario");
+
             if (username !=="" && username !==null) {
                 localStorage.setItem("username", username);
-                myH2.textContent="Bienvenido de nuevo, " + user;
+                myH2.textContent="Bienvenido de nuevo, " + username + "!";
             } else {
                 myH2.textContent="Bienvenido, identifícate.";
             }
-
+            
+        }else{
+            myH2.textContent="Bienvenido de nuevo, " + username + "!";
             
         }
-
-
-
     }
 
     obtenerUsuario();
+    document.body.appendChild(myH2);
    
-
-
-
-
-
-
-
 }
