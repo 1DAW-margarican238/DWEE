@@ -17,7 +17,7 @@
      *
     */  
 
-    let myH2 = document.createElement("h2");
+   let myH2 = document.createElement("h2");
 
     let button = document.createElement("button");
         button.textContent ="Elimina el usuario";
@@ -36,21 +36,22 @@
             myH2.textContent ="Usuario no identificado";
             document.body.appendChild(myH2);
             username = prompt("Introduzca su nombre de usuario");
+            username = username.trim();
 
             if (username !=="" && username !==null) {
                 localStorage.setItem("username", username);
                 myH2.textContent="Bienvenido de nuevo, " + username + "!";
             } else {
-                myH2.textContent="Bienvenido, identifícate.";
+                myH2.textContent="Usuario no identificado.";
             }
             
         }else{
             myH2.textContent="Bienvenido de nuevo, " + username + "!";
-            
-        }
+            document.body.appendChild(myH2);
+
+          }
     }
 
     obtenerUsuario();
-    document.body.appendChild(myH2);
    
 }

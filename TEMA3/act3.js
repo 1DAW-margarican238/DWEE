@@ -36,12 +36,13 @@
             myH2.textContent ="Usuario no identificado";
             document.body.appendChild(myH2);
             username = prompt("Introduzca su nombre de usuario");
+            username = username.trim();
 
             if (username !=="" && username !==null) {
                 sessionStorage.setItem("username", username);
                 myH2.textContent="Bienvenido de nuevo, " + username + "!";
             } else {
-                myH2.textContent="Bienvenido, identifícate.";
+                myH2.textContent="Usuario no identificado.";
             }
             
         }else{
