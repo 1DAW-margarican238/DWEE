@@ -43,13 +43,18 @@
     mensaje.textContent = document.cookie;
     document.body.appendChild(mensaje);
 
+    let mensaje2 = document.createElement("p");
+    mensaje2.textContent = "Cookies -El número de visitas es: " + getCookie("visitas");
+    document.body.appendChild(mensaje2);
+
     let button = document.createElement("button");
     button.textContent ="Elimianr cookie";
     document.body.appendChild(button);
 
     button.addEventListener("click",(ev)=>{
         deleteCookie("visitas");
-    })
+        location.reload();
+    });
 
 
 

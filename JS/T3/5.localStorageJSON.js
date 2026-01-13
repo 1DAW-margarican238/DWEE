@@ -5,6 +5,6 @@
     localStorage.setItem("array",JSON.stringify(myArray));
     let myNewArray = JSON.parse(localStorage.getItem("array"));
     console.log(myNewArray);
-    console.log(myNewArray.lenght);
+    console.log(myNewArray.length);
     console.log(typeof myNewArray);
 }
