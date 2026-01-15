@@ -75,43 +75,48 @@
     form.addEventListener("submit", (ev) => {
         ev.preventDefault();
         let name = document.querySelector("input").value;
+        let isValid = true;
         if (!name.trim()) {
-            return; 
+            isValid = false; 
         }
-        console.log("Valor del select al enviar formulario:", select);
-        let myTarea = {
-            nombre: name,
-            prioridad: select 
-        };
+        if (isValid) {
+            let myTarea = {
+                nombre: name,
+                prioridad: select
+            }
+        
+       
         allMyTasks.push(myTarea);
         localStorage.setItem("arrayTasks",JSON.stringify(allMyTasks));
+        };
     });
-    allMyTasks.sort((a,b)=>b-a);
-    
+        
 
     myBtn2.addEventListener("click",(ev)=>{
-        if (allMyTasks === null) {
-            console.log("no hay na");
+        if (allMyTasks.length === 0) {
+            console.log("no hay tasks")
         }else{
+             
+            let priorityNumber ={
+                "Alta":1,
+                "Media":2,
+                "Baja":3
+            }
+
+
+
+            allMyTasks.sort((a, b) => priorityNumber[a.prioridad] - priorityNumber[b.prioridad]);
+            let limpiar = document.querySelectorAll("h3");
+            limpiar.forEach(h3 => {
+                h3.remove()
+            });
             allMyTasks.forEach(elem => {
-                console.log(elem.prioridad);
                 let myh3 = document.createElement("h3");
                 myh3.textContent = "Task Name: " + elem.nombre + ". Priority: " + elem.prioridad;
                 document.body.appendChild(myh3); 
             });
         }
     });
-
-    //FALTA MOSTRAR POR ORDEN DE PRIORIDAD (SORT ANTES);
-    // SORT -> COMO?? LAS PRIORIDADES NO TIENE NADA
-
-    
-
-
-    // myBtn1.addEventListener("click", (ev)=>{
-    //     let myArray = [];
-        
-    // })
 
 
 
