@@ -72,6 +72,65 @@
         })
     };
 
+    insertBr();
+    let url2 = "http://localhost:3000/members";
+
+
+   
+
+
+
+    let boton3 = document.createElement("input");
+    boton3.setAttribute("type", "button");
+    boton3.setAttribute("value", "Btn3 - Get son-server");
+    document.body.appendChild(boton3);
+    let myValue2 = document.createElement("input");
+    myValue2.setAttribute("type", "number");
+    document.body.appendChild(myValue2);
+    boton3.onclick = function (evento) {
+        let url3 = url2 + "/" + myValue2.value;
+        console.log("URL3: " + url3);
+        let myRequest3 = new Request(url3);
+        fetch(myRequest3)
+        .then(function(response){
+            if(response.ok){
+                return response.json();
+            }else{
+                console.log(response.ok);
+                console.log(response.status);
+                throw new Error ("Error en el fetch");
+
+            }
+        })
+        .then(function(myJson){
+            console.log(myJson);
+            console.log(Array.isArray(myJson));
+            if(Array.isArray(myJson)){
+                myJson.forEach(json =>{
+                    let p = document.createElement("p");
+                p.textContent = json.id + " - " + json.userId + " - " + json.title + " - " + json.completed;
+                document.body.appendChild(p);
+                })
+
+            }else{
+                let p = document.createElement("p");
+                p.textContent = myJson.id + " - " + myJson.userId + " - " + myJson.title + " - " + myJson.completed;
+                document.body.appendChild(p);
+
+
+            }
+            // if(typeof myJson =="Array"){
+            //     console.log("es Array")
+            // }else{
+            //     console.log("es un objeto")
+            // }
+        })
+        .catch(function(error){
+            console.log("Error: " + error);
+        })
+
+    };
+
     
 
 

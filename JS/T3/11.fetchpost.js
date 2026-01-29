@@ -53,4 +53,14 @@
         .then (response=>response.json())
         .then(datosRecibidos => console.log(datosRecibidos));
     });
+
+
+    let boton2 = document.createElement("input");
+    boton2.setAttribute("type", "button");
+    boton2.setAttribute("value", "POST -JSONSERVER");
+    document.body.appendChild(boton2);
+
+    boton2.addEventListener("click", function (evento){
+        
+    })
 }
