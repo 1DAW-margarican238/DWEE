@@ -1,0 +1,4 @@
+-- TypeScript --
+en la terminal : 
+(primera vez) -> npx tsc --init
+correr -> ts-node ./file name
